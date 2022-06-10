@@ -170,12 +170,14 @@
             <h2 class="section-title">Contact</h2>
 
             <div class="contact__container bd-grid">
-                <form action="" class="contact__form">
-                    <input type="text" placeholder="Name" class="contact__input">
-                    <input type="email" placeholder="Email" class="contact__input">
-                    <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
+                <form name="Contact_Form" action="" class="contact__form">
+                    <input name="nama" type="text" id="name" placeholder="Nama" class="contact__input">
+                    <input name="email" type="email" id="email" placeholder="Email" class="contact__input">
+                    <textarea name="pesan" placeholder="pesan" id="pesan" cols="0" rows="10"
+                        class="contact__input"></textarea>
+                    <button type="submit">Send</button>
 
-                    <input type="button" value="Submit" class="contact__button button">
+                    <!-- <input type="button" value="submit" class="contact__button button"> -->
                 </form>
             </div>
         </section>
@@ -195,18 +197,25 @@
         </footer>
         <!-- End Footer -->
 
-
-
-
-
-
-
     </main>
     <!-- Scroll -->
     <script src="https://unpkg.com/scrollreveal"></script>
 
     <!-- Main Js -->
     <script src="main.js"></script>
+
+    <!-- Form submit -->
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwByepowFdb18SI5-0kv0l0oC1hpcWxgolQOiUtJrI6xi5PD7cEl8lZGn6wUEXD-vtr/exec'
+        const form = document.forms['Contact_Form']
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => console.log('Success!', response))
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
 </body>
 
 </html>

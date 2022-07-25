@@ -69,5 +69,5 @@ sr.reveal('.skills__text', { delay: 200 });
 sr.reveal('.skills__data', { interval: 200 });
 sr.reveal('.skills__img', { delay: 200 });
 // Scroll Works
-sr.reveal('.works__img', { interval: 200 });
-sr.reveal('.works__img', { delay: 200 });
+sr.reveal('.works__img', { interval: 100 });
+sr.reveal('.works__img', { delay: 100 });
